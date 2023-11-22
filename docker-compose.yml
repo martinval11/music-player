@@ -1,0 +1,27 @@
+version: '1'
+
+services:
+  # React application service
+  web:
+    image: node:20-alpine
+    working_dir: /client
+    volumes:
+      - ./client:/client
+    ports:
+      - 127.0.0.1:5173:5173
+    env_file:
+      - ./client/.env.local
+    command: sh -c "npm install && npm run dev"
+
+  api:
+    image: node:20-alpine
+    working_dir: /server
+    volumes:
+      - ./server:/server
+    command: sh -c "npm install && npm run dev"
+    environment:
+      NODE_ENV: development
+    env_file:
+      - ./server/.env
+    ports:
+      - 127.0.0.1:3000:3000
