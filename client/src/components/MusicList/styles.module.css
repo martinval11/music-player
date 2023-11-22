@@ -1,0 +1,29 @@
+.musicList {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin-bottom: 60px;
+}
+
+.musicItem {
+  padding: 10px;
+  background: transparent;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  text-align: left;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  &:hover {
+    background: #444;
+  }
+}
+
+.hidden {
+  display: none;
+}
